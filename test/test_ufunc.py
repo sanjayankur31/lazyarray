@@ -7,7 +7,7 @@ Copyright Andrew P. Davison, 2012-2017
 from lazyarray import larray, sqrt, cos, power, fmod
 import numpy as np
 from numpy.testing import assert_array_equal, assert_array_almost_equal
-from nose.tools import assert_raises
+import pytest
 
 
 def test_sqrt_from_array():
@@ -59,4 +59,4 @@ def test_power_with_plain_array():
 def test_fmod_with_array_as_2nd_arg():
     A = larray(np.array([1, 4, 9, 16, 25]))
     B = larray(np.array([1, 4, 9, 16, 25]))
-    assert_raises(TypeError, fmod, A, B)
+    pytest.raises(TypeError, fmod, A, B)
